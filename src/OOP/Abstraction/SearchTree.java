@@ -20,43 +20,37 @@ public class SearchTree implements NodeList {
     }
 
     @Override
-    public boolean addItem(ListItem item) {
+    public boolean addItem( ListItem newItem ) {
 
-        if(root == null){
-            root = item;
+        if (this.root == null) {
+            this.root = newItem;
             return true;
         }
+        ListItem currentItem = this.root;
 
-        ListItem currentItem = root;
+        while (currentItem != null) {
 
-        while (currentItem != null){
+            int comparison = (currentItem.compareTo( newItem ));
 
-            int comparison = currentItem.compareTo(item);
-
-            if(comparison == 0){
-                return false;
-            } else if(comparison > 0){
-                ListItem prevItem = currentItem.previous();
-                if(prevItem == null){
-                    item.setNext(root);
-                    root.setPrevious(item);
-                    root = item;
+            if (comparison < 0) {
+                if (currentItem.next() != null) {
+                    currentItem = currentItem.next();
                 } else {
-                    prevItem.setNext(item);
-                    item.setPrevious(prevItem);
-                    item.setNext(currentItem);
-                    currentItem.setPrevious(item);
+                    currentItem.setNext( newItem );
+                    return true;
                 }
-                return true;
-            } else if(comparison < 0){
+            } else if (comparison > 0) {
 
-                ListItem nextItem = currentItem.next();
-                if(nextItem == null){
-                    currentItem.setNext(item);
-                    item.setPrevious(currentItem);
+                if (currentItem.previous() != null) {
+                    currentItem = currentItem.previous();
+                } else {
+                    currentItem.setPrevious( newItem );
+                    return true;
                 }
+            } else {
+                System.out.println(newItem.getValue() + " is already present, not added");
+                return false;
             }
-            currentItem = currentItem.next();
         }
         return false;
     }

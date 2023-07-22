@@ -14,43 +14,44 @@ public class MyLinkedList implements NodeList {
     }
 
     @Override
-    public boolean addItem(ListItem item) {
+    public boolean addItem( ListItem newItem ) {
 
-        if(root == null){
-            root = item;
+        if (this.root == null) {
+            this.root = newItem;
             return true;
         }
 
-        ListItem currentItem = root;
+        ListItem currentItem = this.root;
+        while (currentItem != null) {
 
-        while (currentItem != null){
+            int comparison = (currentItem.compareTo( newItem ));
 
-            int comparison = currentItem.compareTo(item);
+            if (comparison < 0) {
 
-            if(comparison == 0){
-                return false;
-            } else if(comparison > 0){
-                ListItem prevItem = currentItem.previous();
-                if(prevItem == null){
-                    item.setNext(root);
-                    root.setPrevious(item);
-                    root = item;
+                if (currentItem.next() != null) {
+                    currentItem = currentItem.next();
                 } else {
-                    prevItem.setNext(item);
-                    item.setPrevious(prevItem);
-                    item.setNext(currentItem);
-                    currentItem.setPrevious(item);
+                    currentItem.setNext( newItem );
+                    newItem.setPrevious( currentItem );
+                    return true;
+                }
+            } else if (comparison > 0) {
+
+                if (currentItem.previous() != null) {
+                    currentItem.previous().setNext( newItem );
+                    newItem.setPrevious( currentItem.previous() );
+                    newItem.setNext( currentItem );
+                    currentItem.setPrevious( newItem );
+                } else {
+                    currentItem.setPrevious( newItem );
+                    newItem.setNext( currentItem );
+                    this.root = newItem;
                 }
                 return true;
             } else {
-
-                ListItem nextItem = currentItem.next();
-                if(nextItem == null){
-                    currentItem.setNext(item);
-                    item.setPrevious(currentItem);
-                }
+                System.out.println(newItem.getValue() + " is already present, not added");
+                return false;
             }
-            currentItem = currentItem.next();
         }
         return false;
     }
