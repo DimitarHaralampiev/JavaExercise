@@ -1,4 +1,4 @@
-package ObjectsAndClasses.GroomingSalon;
+package OOP.ObjectsAndClasses.GroomingSalon;
 
 import java.util.ArrayList;
 import java.util.List;

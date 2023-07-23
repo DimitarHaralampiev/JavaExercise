@@ -1,4 +1,4 @@
-package ObjectsAndClasses.Students;
+package OOP.ObjectsAndClasses.Students;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package ObjectsAndClasses.OpinionPoll;
+package OOP.ObjectsAndClasses.OpinionPoll;
 
 import java.util.ArrayList;
 import java.util.Scanner;

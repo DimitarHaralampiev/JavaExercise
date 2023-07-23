@@ -1,4 +1,4 @@
-package ObjectsAndClasses.GroomingSalon;
+package OOP.ObjectsAndClasses.GroomingSalon;
 
 public class Pet {
 

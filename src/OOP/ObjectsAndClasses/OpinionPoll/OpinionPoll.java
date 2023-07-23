@@ -1,4 +1,4 @@
-package ObjectsAndClasses.OpinionPoll;
+package OOP.ObjectsAndClasses.OpinionPoll;
 
 public class OpinionPoll {
 

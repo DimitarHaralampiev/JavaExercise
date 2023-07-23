@@ -1,4 +1,4 @@
-package ObjectsAndClasses.Article;
+package OOP.ObjectsAndClasses.Article;
 
 public class Article {
 
