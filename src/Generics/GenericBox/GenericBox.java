@@ -2,10 +2,10 @@ package Generics.GenericBox;
 
 public class GenericBox <T>{
 
-    private String text;
+    private T data;
 
-    public GenericBox(String text) {
-        this.text = text;
+    public GenericBox(T data) {
+        this.data = data;
     }
 
     @Override
@@ -13,7 +13,7 @@ public class GenericBox <T>{
         return this.getClass().getPackageName() + ": " + this.getText();
     }
 
-    public String getText() {
-        return text;
+    public T getText() {
+        return data;
     }
 }
