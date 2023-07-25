@@ -41,13 +41,18 @@ public class CustomList<T extends Comparable<T>> {
     }
 
     public T getMax(){
-        Collections.sort(elements);
+        sort();
         return elements.get(elements.size() - 1);
     }
 
     public T getMin(){
-        Collections.sort(elements);
+        sort();
         return elements.get(0);
+    }
+
+    public List<T> sort(){
+        Collections.sort(elements);
+        return elements;
     }
 
     public void print(){

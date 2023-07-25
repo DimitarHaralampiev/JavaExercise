@@ -38,6 +38,8 @@ public class Main {
                 System.out.println(customList.getMax());
             } else if (cmd.equals("Min")) {
                 System.out.println(customList.getMin());
+            } else if (cmd.equals("Sort")) {
+                customList.sort();
             } else {
                 customList.print();
             }
