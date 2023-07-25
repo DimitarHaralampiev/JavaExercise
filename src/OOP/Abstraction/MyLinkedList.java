@@ -14,7 +14,7 @@ public class MyLinkedList implements NodeList {
     }
 
     @Override
-    public boolean addItem( ListItem newItem ) {
+    public boolean addItem(ListItem newItem) {
 
         if (this.root == null) {
             this.root = newItem;
@@ -22,28 +22,29 @@ public class MyLinkedList implements NodeList {
         }
 
         ListItem currentItem = this.root;
+
         while (currentItem != null) {
 
-            int comparison = (currentItem.compareTo( newItem ));
+            int comparison = (currentItem.compareTo(newItem));
 
             if (comparison < 0) {
 
                 if (currentItem.next() != null) {
                     currentItem = currentItem.next();
                 } else {
-                    currentItem.setNext( newItem );
+                    currentItem.setNext(newItem);
                     newItem.setPrevious( currentItem );
                     return true;
                 }
             } else if (comparison > 0) {
 
                 if (currentItem.previous() != null) {
-                    currentItem.previous().setNext( newItem );
-                    newItem.setPrevious( currentItem.previous() );
-                    newItem.setNext( currentItem );
-                    currentItem.setPrevious( newItem );
+                    currentItem.previous().setNext(newItem);
+                    newItem.setPrevious(currentItem.previous());
+                    newItem.setNext(currentItem);
+                    currentItem.setPrevious(newItem);
                 } else {
-                    currentItem.setPrevious( newItem );
+                    currentItem.setPrevious(newItem);
                     newItem.setNext( currentItem );
                     this.root = newItem;
                 }
