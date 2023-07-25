@@ -1,12 +1,11 @@
-package Generics.GenericCountMethodStrings;
+package Generics.GenericCountMethodDoubles;
 
 import java.util.List;
 
-public class GenericCountMethodStrings<T extends Comparable<T>> {
-
+public class GenericCountMethodDoubles<T extends Comparable<T>> {
     private T data;
 
-    public GenericCountMethodStrings(T data) {
+    public GenericCountMethodDoubles(T data) {
         this.data = data;
     }
 
@@ -25,4 +24,5 @@ public class GenericCountMethodStrings<T extends Comparable<T>> {
     public String toString() {
         return this.getClass().getPackageName() + ": " + this.data;
     }
+
 }
