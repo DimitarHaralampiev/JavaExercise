@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    enum CardRank { ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING}
+    enum CardRank { ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING }
 
     public static void main(String[] args) {
 
