@@ -1,4 +1,4 @@
-package OOP.Abstraction.CardSuit;
+package OOP.Enum.CardSuit;
 
 public enum CardSuit {
 

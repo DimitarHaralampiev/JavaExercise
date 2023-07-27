@@ -1,4 +1,4 @@
-package OOP.Abstraction.CardsWithPower;
+package OOP.Enum.CardsWithPower;
 
 public class Card {
 

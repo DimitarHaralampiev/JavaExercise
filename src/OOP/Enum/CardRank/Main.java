@@ -1,4 +1,4 @@
-package OOP.Abstraction.CardRank;
+package OOP.Enum.CardRank;
 
 import java.util.Scanner;
 

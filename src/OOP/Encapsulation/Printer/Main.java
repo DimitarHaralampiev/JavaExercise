@@ -1,4 +1,4 @@
-package OOP.Encapsulation;
+package OOP.Encapsulation.Printer;
 
 public class Main {
 
