@@ -1,6 +1,8 @@
-package OOP.Abstraction;
+package OOP.Abstraction.MyLinkedList;
 
-public class Node extends ListItem{
+import OOP.Abstraction.MyLinkedList.ListItem;
+
+public class Node extends ListItem {
 
     public Node(Object value) {
         super(value);

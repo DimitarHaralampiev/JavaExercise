@@ -1,4 +1,7 @@
-package OOP.Abstraction;
+package OOP.Abstraction.MyLinkedList;
+
+import OOP.Abstraction.MyLinkedList.ListItem;
+import OOP.Abstraction.MyLinkedList.NodeList;
 
 public class SearchTree implements NodeList {
 

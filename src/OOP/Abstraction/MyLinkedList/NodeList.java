@@ -1,6 +1,6 @@
-package OOP.Abstraction;
+package OOP.Abstraction.MyLinkedList;
 
-import java.util.ListIterator;
+import OOP.Abstraction.MyLinkedList.ListItem;
 
 public interface NodeList {
 

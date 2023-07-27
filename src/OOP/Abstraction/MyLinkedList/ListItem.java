@@ -1,4 +1,4 @@
-package OOP.Abstraction;
+package OOP.Abstraction.MyLinkedList;
 
 public abstract class ListItem {
 
