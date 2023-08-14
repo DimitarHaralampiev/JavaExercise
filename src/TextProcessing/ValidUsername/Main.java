@@ -1,4 +1,4 @@
-package TextProcessing;
+package TextProcessing.ValidUsername;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
