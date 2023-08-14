@@ -1,4 +1,4 @@
-package List.HouseParty;
+package ListAndMaps.HouseParty;
 
 import java.util.ArrayList;
 import java.util.List;

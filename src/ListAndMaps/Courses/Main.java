@@ -1,4 +1,4 @@
-package Mthods.Courses;
+package ListAndMaps.Courses;
 
 import java.util.*;
 

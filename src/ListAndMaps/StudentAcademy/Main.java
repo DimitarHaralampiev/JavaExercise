@@ -1,4 +1,4 @@
-package List.StudentAcademy;
+package ListAndMaps.StudentAcademy;
 
 import java.text.DecimalFormat;
 import java.util.*;

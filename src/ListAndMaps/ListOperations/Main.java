@@ -1,7 +1,6 @@
-package List.ChangeList;
+package ListAndMaps.ListOperations;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ public class Main {
         String[] array = inputArray();
 
         List<Integer> listIntegers = fillList(array);
-        listIntegers = changeList((ArrayList<Integer>) listIntegers);
+        listIntegers = listOperations((ArrayList<Integer>) listIntegers);
         printArray(listIntegers);
     }
 
@@ -23,7 +22,7 @@ public class Main {
         return array;
     }
 
-    public static List<Integer> changeList(ArrayList<Integer> listIntegers) {
+    public static List<Integer> listOperations(ArrayList<Integer> listIntegers) {
 
         while (true) {
 
@@ -34,11 +33,25 @@ public class Main {
                 break;
             }
 
-            int firstNum = Integer.parseInt(command[1]);
-
-            if (cmd.equals("Delete")) {
-                listIntegers.removeAll(Collections.singleton(firstNum));
+            if (cmd.equals("Remove")) {
+                int firstNum = Integer.parseInt(command[1]);
+                listIntegers.remove(Integer.valueOf(firstNum));
+            } else if (cmd.equals("Add")) {
+                int firstNum = Integer.parseInt(command[1]);
+                listIntegers.add(firstNum);
+            } else if (cmd.equals("Shift")){
+                int thirdNum = Integer.parseInt(command[2]);
+                if (command[1].equals("left")){
+                    int firstIndex = listIntegers.get(thirdNum);
+                    listIntegers.add(thirdNum, listIntegers.get(0));
+                    listIntegers.add(0, firstIndex);
+                } else {
+                    int lastIndex = listIntegers.get(0);
+                    listIntegers.add(0, listIntegers.get(thirdNum));
+                    listIntegers.add(lastIndex, lastIndex);
+                }
             } else if (cmd.equals("Insert")) {
+                int firstNum = Integer.parseInt(command[1]);
                 int secondNum = Integer.parseInt(command[2]);
                 listIntegers.add(secondNum, firstNum);
             }

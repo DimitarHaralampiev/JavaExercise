@@ -1,4 +1,4 @@
-package Mthods.SoftUniParking;
+package ListAndMaps.SoftUniParking;
 
 import java.util.*;
 

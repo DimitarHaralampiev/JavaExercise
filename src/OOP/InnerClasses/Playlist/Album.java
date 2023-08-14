@@ -1,6 +1,6 @@
 package OOP.InnerClasses.Playlist;
 
-import Array.Playlist.Song;
+import OOP.Playlist.Song;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

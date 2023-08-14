@@ -1,4 +1,4 @@
-package Array.Banking;
+package OOP.Banking;
 
 public class Main {
 
