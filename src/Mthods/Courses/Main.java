@@ -11,7 +11,6 @@ public class Main {
     }
 
     private static String input(){
-
         Scanner scanner = new Scanner(System.in);
         String courseAndStudent = scanner.nextLine();
         return courseAndStudent;
