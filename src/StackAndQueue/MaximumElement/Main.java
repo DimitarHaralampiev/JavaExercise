@@ -25,14 +25,22 @@ public class Main {
             } else if (cmd.equals("2")) {
                 stack.pop();
             } else if (cmd.equals("3")) {
-                int temp = 0;
-                for (int j = 0; j < stack.size(); j++){
-                    if (temp < stack.get(j)){
-                        temp = stack.get(j);
-                    }
-                }
-                System.out.print(temp);
+                maxElement(stack);
             }
         }
+    }
+
+    private static void maxElement(Stack<Integer> stack){
+        int temp = 0;
+        for (int j = 0; j < stack.size(); j++){
+            if (temp < stack.get(j)){
+                temp = stack.get(j);
+            }
+        }
+        print(temp);
+    }
+
+    private static void print(int num){
+        System.out.print(num);
     }
 }
