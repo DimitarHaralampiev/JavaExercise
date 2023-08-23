@@ -1,9 +1,11 @@
-package OOP.Interface;
+package OOP.Interface.ISaveable;
+
+import OOP.Interface.ISaveable.ISaveable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Monster implements ISaveable{
+public class Monster implements ISaveable {
 
     private String name;
 

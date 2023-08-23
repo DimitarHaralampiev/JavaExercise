@@ -1,4 +1,6 @@
-package OOP.Interface;
+package OOP.Interface.ISaveable;
+
+import OOP.Interface.ISaveable.ISaveable;
 
 import java.util.ArrayList;
 import java.util.List;

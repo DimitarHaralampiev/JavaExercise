@@ -1,4 +1,4 @@
-package OOP.Interface.DefineInterfacePerson;
+package OOP.Interface.DefineInterfacePerson.Interfaces;
 
 public interface Person {
 

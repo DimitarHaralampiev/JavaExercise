@@ -1,6 +1,10 @@
-package OOP.Interface.DefineInterfacePerson;
+package OOP.Interface.DefineInterfacePerson.Classes;
 
-public class Citizen implements Person, Birthable, Identifiable{
+import OOP.Interface.DefineInterfacePerson.Interfaces.Birthable;
+import OOP.Interface.DefineInterfacePerson.Interfaces.Identifiable;
+import OOP.Interface.DefineInterfacePerson.Interfaces.Person;
+
+public class Citizen implements Person, Birthable, Identifiable {
 
     private String name;
 
@@ -38,6 +42,11 @@ public class Citizen implements Person, Birthable, Identifiable{
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Citizen{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", id='" + id + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                '}';
     }
 }

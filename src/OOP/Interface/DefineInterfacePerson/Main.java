@@ -1,31 +1,51 @@
 package OOP.Interface.DefineInterfacePerson;
 
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import OOP.Interface.DefineInterfacePerson.Classes.Citizen;
+import OOP.Interface.DefineInterfacePerson.Classes.Pet;
+import OOP.Interface.DefineInterfacePerson.Interfaces.Birthable;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Class[] citizenInterface = Citizen.class.getInterfaces();
+        Scanner scanner = new Scanner(System.in);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        if (Arrays.asList(citizenInterface).contains(Birthable.class)
-                    && Arrays.asList(citizenInterface).contains(Identifiable.class)){
-            Method[] fields = Identifiable.class.getDeclaredMethods();
-            Method[] fields2 = Birthable.class.getDeclaredMethods();
-            Scanner scanner = new Scanner(System.in);
-            String name = scanner.nextLine();
-            int age = Integer.parseInt(scanner.nextLine());
-            String id = scanner.nextLine();
-            String birthDate = scanner.nextLine();
+        List<Birthable> birthableCit = new ArrayList<>();
 
-            Identifiable identifiable = new Citizen(name, age, id, birthDate);
-            Birthable birthable = new Citizen(name, age, id, birthDate);
+        while (true){
+            String[] info = scanner.nextLine().split(" ");
+            String cmd = info[0];
 
-            System.out.println(fields.length);
-            System.out.println(fields[0].getReturnType().getSimpleName());
-            System.out.println(fields2.length);
-            System.out.println(fields2[0].getReturnType().getSimpleName());
+            if (cmd.equals("End")){
+                break;
+            }
+
+            if (cmd.equals("Citizen")){
+                String name = info[1];
+                int age = Integer.parseInt(info[2]);
+                String id = info[3];
+                String birthDate = info[4];
+                birthableCit.add(new Citizen(name, age, id, birthDate));
+            } else if (cmd.equals("Pet")) {
+                String name = info[1];
+                String birthDate = info[2];
+                birthableCit.add(new Pet(name, birthDate));
+            }
+        }
+
+        int year = scanner.nextInt();
+        for (Birthable birthable : birthableCit){
+            LocalDate localDate = LocalDate.parse(birthable.getBirthDate(), formatter);
+
+            if (year == localDate.getYear()){
+                System.out.println(birthable.getBirthDate());
+            }
         }
     }
 }

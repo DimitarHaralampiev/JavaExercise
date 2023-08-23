@@ -1,4 +1,4 @@
-package OOP.Interface;
+package OOP.Interface.ISaveable;
 
 import java.util.List;
 
